@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Genera códigos QR fácilmente para todos tus enlaces"
+    />
+    <meta
+      name="keywords"
+      content="codigo qr, generar codigo qr, crear codigo qr, codigos qr, qr code, qr codes, qrcodes, create qr code, qr code generator, create qrcodes, make a qr code, online qr code"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Generador de códigos QR</title>
+  </head>
+
+  <body class="bg-slate-900">
+    <header class="px-6">
+      <div
+        class="max-w-6xl mx-auto mt-10 p-4 bg-slate-800 border border-white rounded-md hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(255,255,255)] transition"
+      >
+        <h1 class="text-2xl md:text-4xl text-white text-center py-6">
+          Generador de códigos QR
+        </h1>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto mt-12">
+      <section
+        class="flex flex-col justify-center align-center gap-12 py-4 px-6 md:flex-row"
+      >
+        <div
+          class="w-full md:w-2/3 p-8 bg-slate-800 border border-white rounded-md"
+        >
+          <h2 class="text-xl md:text-2xl text-white">Generador de código QR</h2>
+          <p class="mb-6 text-slate-300">
+            Genera códigos QR para acceder de forma instantánea a tus enlaces
+            usando tu smartphone.
+          </p>
+
+          <form id="generateQR-form">
+            <label for="url" class="text-slate-200">URL:</label>
+            <input
+              name="url"
+              id="url"
+              type="url"
+              placeholder="Escribe una URL"
+              class="w-full border-2 border-slate-500 rounded-md p-3 text-slate-dark mr-2 focus:outline-none placeholder:text-slate-300 mb-5"
+            />
+
+            <label for="size" class="text-slate-200">Tamaño:</label>
+            <select
+              class="w-full border-2 border-slate-500 rounded-md p-3 text-slate-dark mr-2 focus:outline-none placeholder:text-slate-300"
+              name="size"
+              id="size"
+            >
+              <option value="100">100x100</option>
+              <option value="200">200x200</option>
+              <option value="300" selected>300x300</option>
+              <option value="400">400x400</option>
+              <option value="500">500x500</option>
+              <option value="600">600x600</option>
+            </select>
+
+            <button
+              class="bg-purple-700 rounded-md w-full text-white py-3 px-4 mt-5 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(255,255,255)] transition"
+              type="submit"
+            >
+              Generate QR Code
+            </button>
+          </form>
+        </div>
+
+        <div class="w-full md:w-1/3">Div 2</div>
+      </section>
+
+      <section
+        id="generated"
+        class="max-w-6xl mx-auto flex flex-col text-center align-center justify-center mt-20"
+      ></section>
+    </main>
+  </body>
+</html>
