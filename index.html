@@ -24,20 +24,20 @@
   </head>
 
   <body>
-    <header class="px-6">
+    <header>
       <div
-        class="max-w-4xl mx-auto mt-10 p-4 bg-slate-100 border-2 border-slate-900 rounded-md hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(15,23,42)] transition"
+        class="w-full mx-auto p-4 bg-purple-900 border-b-2 border-b-slate-900"
       >
-        <h1 class="text-2xl md:text-4xl text-slate-900 text-center py-6">
+        <h1 class="text-2xl md:text-4xl text-white text-center py-6">
           Generador de códigos QR
         </h1>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto mt-12 px-6">
+    <main class="max-w-4xl mx-auto mt-16 px-6">
       <section class="flex justify-center align-center gap-12">
         <div
-          class="w-full p-12 bg-slate-100 border-2 border-slate-900 rounded-md"
+          class="w-full p-12 bg-slate-50 border-2 border-slate-900 rounded-md"
         >
           <h2 class="text-xl md:text-2xl text-slate-800">
             Generador de código QR
@@ -54,9 +54,13 @@
               id="url"
               type="url"
               placeholder="Escribe una URL"
-              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-300"
+              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-400"
+              required
             />
-            <span id="errorMsg" class="block text-red-700 invisible"
+            <span
+              role="alert"
+              id="errorMsg"
+              class="block text-red-700 invisible"
               >Rellena este campo con una URL correcta.</span
             >
 
