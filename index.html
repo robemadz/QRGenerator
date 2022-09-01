@@ -47,21 +47,22 @@
             usando tu smartphone.
           </p>
 
-          <form id="qrForm">
+          <form id="qrForm" novalidate>
             <label for="url" class="text-slate-700">URL:</label>
             <input
               name="url"
               id="url"
-              type="url"
+              type="text"
+              pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
               placeholder="Escribe una URL"
-              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-400"
+              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-400 valid:border-green-500"
               required
             />
             <span
               role="alert"
               id="errorMsg"
               class="block text-red-700 invisible"
-              >Rellena este campo con una URL correcta.</span
+              >Escribe una URL en formato válido</span
             >
 
             <label for="size" class="inline-block text-slate-700 mt-5"
@@ -93,7 +94,7 @@
       <!-- Generated QR code -->
       <section
         id="generated"
-        class="max-w-2xl mx-auto flex flex-col text-center align-center justify-center mt-10"
+        class="max-w-2xl mx-auto flex flex-col text-center align-center justify-center my-10"
       >
         <!-- Spinner -->
         <div id="spinner" role="status" class="hidden">
