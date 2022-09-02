@@ -23,92 +23,96 @@
     <title>Generador de códigos QR</title>
   </head>
 
-  <body class="bg-gray-100">
+  <body class="bg-indigo-50/30">
     <header>
-      <div class="w-full mx-auto p-4 bg-purple-900">
+      <div class="w-full mx-auto p-4 bg-indigo-900">
         <h1 class="text-2xl md:text-4xl text-white text-center py-6">
           Generador de códigos QR
         </h1>
       </div>
     </header>
 
-    <main class="max-w-4xl min-h-screen mx-auto mt-16 px-6">
-      <section
-        class="bg-white border-2 border-slate-900 rounded-md shadow-lg mb-8"
+    <main class="max-w-6xl mx-auto mt-16 px-6">
+      <div
+        class="flex flex-col justify-between items-center lg:flex-row lg:items-stretch lg:gap-12"
       >
-        <div class="p-5 md:p-12">
-          <h2 class="text-lg md:text-xl text-slate-800 mb-3">
-            ⚙️ Intrucciones! Cómo generar tu código QR:
-          </h2>
-          <ol class="list-decimal px-4 flex flex-col gap-2 text-slate-600">
-            <li>
-              Introduce una URL válida. El formato debe comenzar siempre por un
-              protocolo. Ejemplo: http://www.google.com o https://www.google.com
-            </li>
-            <li>Selecciona el tamaño en el que deseas generar tu QR</li>
-            <li>Pulsa en el botón "Generar código QR"</li>
-            <li>
-              Una vez se genere y lo veas en pantalla, si deseas descargarlo,
-              pulsa en el botón.
-            </li>
-          </ol>
-        </div>
-      </section>
-      <section
-        class="bg-white flex justify-center align-center gap-12 rounded-md shadow-lg border-2 border-slate-900"
-      >
-        <div class="px-5 py-8 md:px-12 md:py-14">
-          <h3 class="text-xl md:text-2xl text-slate-800 mb-3">
-            👾 Generador de código QR
-          </h3>
-          <p class="mb-6 text-slate-600">
-            Genera códigos QR para acceder de forma instantánea a tus enlaces.
-          </p>
+        <section
+          class="bg-white border-2 border-indigo-800 rounded-md shadow-lg mb-8 lg:mb-0 lg:w-1/3"
+        >
+          <div class="p-5 md:p-12">
+            <h2 class="text-lg md:text-xl text-slate-800 mb-3">
+              ⚙️ Cómo generar tu código QR:
+            </h2>
+            <ol class="list-decimal px-4 flex flex-col gap-2 text-slate-600">
+              <li>
+                Introduce una URL válida. El formato debe comenzar siempre por
+                un protocolo. Ejemplo: http://www.google.com o
+                https://www.google.com
+              </li>
+              <li>Selecciona el tamaño en el que deseas generar tu QR.</li>
+              <li>Pulsa en el botón "Generar código QR".</li>
+              <li>
+                Una vez se genere y lo veas en pantalla, si deseas descargarlo,
+                pulsa en el botón.
+              </li>
+            </ol>
+          </div>
+        </section>
+        <section
+          class="w-full bg-white flex justify-center align-center gap-12 rounded-md shadow-lg border-2 border-indigo-800 lg:w-2/3"
+        >
+          <div class="px-5 py-8 md:px-12 md:py-14">
+            <h3 class="text-xl md:text-2xl text-slate-800 mb-3">
+              👾 Generador de código QR
+            </h3>
+            <p class="mb-6 text-slate-600">
+              Genera códigos QR para acceder de forma instantánea a tus enlaces.
+            </p>
 
-          <form id="qrForm" novalidate>
-            <label for="url" class="text-slate-700">URL:</label>
-            <input
-              name="url"
-              id="url"
-              type="text"
-              pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
-              placeholder="Escribe una URL"
-              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-400 valid:border-green-500"
-              required
-            />
-            <span
-              role="alert"
-              id="errorMsg"
-              class="block text-red-700 invisible"
-              >Escribe una URL en formato válido</span
-            >
+            <form id="qrForm" novalidate>
+              <label for="url" class="text-slate-700">URL:</label>
+              <input
+                name="url"
+                id="url"
+                type="text"
+                pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+                placeholder="Ej: https://www.google.es"
+                class="w-full border-2 border-indigo-900 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-indigo-700 placeholder:text-slate-400 valid:border-green-500"
+                required
+              />
+              <span
+                role="alert"
+                id="errorMsg"
+                class="block text-red-700 invisible"
+                >Escribe una URL en formato válido</span
+              >
 
-            <label for="size" class="inline-block text-slate-700 mt-2 md:mt-5"
-              >Tamaño:</label
-            >
-            <select
-              class="w-full border-2 border-slate-800 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-purple-700 placeholder:text-slate-300"
-              name="size"
-              id="size"
-            >
-              <option value="100">100x100</option>
-              <option value="200">200x200</option>
-              <option value="300" selected>300x300</option>
-              <option value="400">400x400</option>
-              <option value="500">500x500</option>
-              <option value="600">600x600</option>
-            </select>
+              <label for="size" class="inline-block text-slate-700 mt-2 md:mt-5"
+                >Tamaño:</label
+              >
+              <select
+                class="w-full border-2 border-indigo-900 rounded-md p-3 text-slate-dark mr-2 focus:outline-none focus:border-indigo-700 placeholder:text-slate-300"
+                name="size"
+                id="size"
+              >
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300" selected>300x300</option>
+                <option value="400">400x400</option>
+                <option value="500">500x500</option>
+                <option value="600">600x600</option>
+              </select>
 
-            <button
-              class="block mx-auto bg-purple-700 rounded-md w-full md:w-1/2 text-white border border-slate-900 py-3 px-4 mt-8 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(15,23,42)] hover:bg-purple-600 transition"
-              type="submit"
-            >
-              Generar Código QR 🔥
-            </button>
-          </form>
-        </div>
-      </section>
-
+              <button
+                class="block mx-auto bg-indigo-700 rounded-md w-full md:w-1/2 text-white border border-slate-900 py-3 px-4 mt-8 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(15,23,42)] hover:bg-indigo-600 transition"
+                type="submit"
+              >
+                Generar Código QR 🔥
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
       <!-- Generated QR code -->
       <section
         id="generated"
@@ -117,7 +121,7 @@
         <!-- Spinner -->
         <div id="spinner" role="status" class="hidden">
           <svg
-            class="inline mr-2 w-24 h-24 text-slate-200 animate-spin fill-purple-600"
+            class="inline mr-2 w-24 h-24 text-slate-200 animate-spin fill-indigo-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -134,11 +138,11 @@
           <span class="sr-only">Loading...</span>
         </div>
         <!-- QR Code Output -->
-        <div id="qrCode" class="mx-auto mb-10"></div>
+        <div id="qrCode" class="mx-auto"></div>
       </section>
     </main>
 
-    <footer class="relative bg-purple-900 left-0 right-0 bottom-0">
+    <footer class="relative bg-indigo-900 left-0 right-0 bottom-0">
       <div
         class="flex flex-col justify-center items-center py-6 text-white gap-2"
       >

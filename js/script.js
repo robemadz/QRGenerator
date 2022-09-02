@@ -19,7 +19,7 @@ const onSubmit = (e) => {
   if (pattern || urlValue === '') {
     let regex = new RegExp(pattern);
     if (!regex.exec(urlValue)) {
-      return;
+      return errorMsg.classList.remove('invisible');
     } else {
       showSpinner();
 
@@ -63,7 +63,7 @@ const addDownloadBtn = (saveUrl) => {
   const downloadLink = document.createElement('a');
   downloadLink.id = 'saveQrLink';
   downloadLink.classList =
-    'bg-lime-500 hover:bg-lime-400 text-white font-bold py-2 px-4 rounded-md w-1/2 mx-auto mt-2 shadow-md';
+    'bg-green-600 text-white font-bold py-2 px-4 rounded-md w-full md:w-1/2 mx-auto mt-8 hover:shadow-md hover:bg-green-500 hover:-translate-y-1 transition';
   downloadLink.href = saveUrl;
   downloadLink.download = 'qrCode';
   downloadLink.innerHTML = 'Descarga tu código QR';
