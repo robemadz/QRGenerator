@@ -25,26 +25,44 @@
 
   <body>
     <header>
-      <div
-        class="w-full mx-auto p-4 bg-purple-900 border-b-2 border-b-slate-900"
-      >
+      <div class="w-full mx-auto p-4 bg-purple-900">
         <h1 class="text-2xl md:text-4xl text-white text-center py-6">
           Generador de códigos QR
         </h1>
       </div>
     </header>
 
-    <main class="max-w-4xl mx-auto mt-16 px-6">
+    <main class="max-w-4xl min-h-screen mx-auto mt-16 px-6">
+      <section
+        class="bg-slate-50 border-2 border-slate-900 rounded-md shadow-lg mb-8"
+      >
+        <div class="p-5 md:p-12">
+          <h2 class="text-lg md:text-xl text-slate-800 mb-3">
+            ⚙️ Intrucciones! Cómo generar tu código QR:
+          </h2>
+          <ol class="list-decimal px-4 flex flex-col gap-2 text-slate-700">
+            <li>
+              Introduce una URL válida. El formato debe comenzar siempre por un
+              protocolo. Ejemplo: http://www.google.com o https://www.google.com
+            </li>
+            <li>Selecciona el tamaño en el que deseas generar tu QR</li>
+            <li>Pulsa en el botón "Generar código QR"</li>
+            <li>
+              Una vez se genere y lo veas en pantalla, si deseas descargarlo,
+              pulsa en el botón.
+            </li>
+          </ol>
+        </div>
+      </section>
       <section class="flex justify-center align-center gap-12">
         <div
-          class="w-full p-12 bg-slate-50 border-2 border-slate-900 rounded-md"
+          class="w-full p-5 md:p-12 bg-slate-50 border-2 border-slate-900 rounded-md shadow-lg"
         >
-          <h2 class="text-xl md:text-2xl text-slate-800">
-            Generador de código QR
-          </h2>
+          <h3 class="text-xl md:text-2xl text-slate-800 mb-3">
+            👾 Generador de código QR
+          </h3>
           <p class="mb-6 text-slate-600">
-            Genera códigos QR para acceder de forma instantánea a tus enlaces
-            usando tu smartphone.
+            Genera códigos QR para acceder de forma instantánea a tus enlaces.
           </p>
 
           <form id="qrForm" novalidate>
@@ -65,7 +83,7 @@
               >Escribe una URL en formato válido</span
             >
 
-            <label for="size" class="inline-block text-slate-700 mt-5"
+            <label for="size" class="inline-block text-slate-700 md:mt-5"
               >Tamaño:</label
             >
             <select
@@ -85,7 +103,7 @@
               class="block mx-auto bg-purple-700 rounded-md w-full md:w-1/2 text-white border border-slate-900 py-3 px-4 mt-8 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_rgba(15,23,42)] hover:bg-purple-600 transition"
               type="submit"
             >
-              Generate QR Code
+              Generar Código QR 🔥
             </button>
           </form>
         </div>
@@ -119,5 +137,14 @@
         <div id="qrCode" class="mx-auto mb-10"></div>
       </section>
     </main>
+
+    <footer class="relative bg-purple-900 left-0 right-0 bottom-0">
+      <div
+        class="flex flex-col justify-center items-center py-6 text-white gap-2"
+      >
+        <p>Created by Robe - based on @BradTraversy project 🔥</p>
+        <span>* 2022 *</span>
+      </div>
+    </footer>
   </body>
 </html>
