@@ -3,7 +3,8 @@ const qrCode = document.getElementById('qrCode');
 const url = document.getElementById('url');
 const errorMsg = document.getElementById('errorMsg');
 const spinner = document.getElementById('spinner');
-const pattern = url.pattern;
+const pattern =
+  /^[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 
 const onSubmit = (e) => {
   e.preventDefault();
