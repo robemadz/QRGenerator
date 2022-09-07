@@ -20,7 +20,7 @@ const onSubmit = (e) => {
   if (pattern || urlValue === '') {
     let regex = new RegExp(pattern);
     if (!regex.exec(urlValue)) {
-      return errorMsg.classList.remove('invisible');
+      return showErrorMsg('Introduce una URL válida');
     } else {
       showSpinner();
 
@@ -57,6 +57,7 @@ const cleanUI = () => {
   if (saveBtn) {
     saveBtn.remove();
   }
+  url.classList.remove('border-green-500');
 };
 
 //generate download btn function with JS
@@ -81,16 +82,35 @@ const hideSpinner = () => {
   spinner.classList.add('hidden');
 };
 
+//Function for errorMsg
+const showErrorMsg = (msg) => {
+  errorMsg.innerText = `${msg}`;
+  errorMsg.classList.remove('invisible');
+};
+
+//Hide errorMsg
+const hideErrorMsg = () => {
+  errorMsg.classList.add('invisible');
+};
+
 //Real time validation using custom pattern with regEx
 document.addEventListener('keyup', (e) => {
   if (e.target.matches('#qrForm [required]')) {
     let input = e.target;
 
-    if (pattern || input.value === '') {
+    if (input.value === '') {
+      showErrorMsg('Introduce una URl válida');
+      url.classList.remove('border-green-500');
+    } else if (pattern) {
       let regex = new RegExp(pattern);
-      return !regex.exec(input.value)
-        ? errorMsg.classList.remove('invisible')
-        : errorMsg.classList.add('invisible');
+
+      if (!regex.exec(input.value)) {
+        showErrorMsg('El formato es incorrecto');
+        url.classList.remove('border-green-500');
+      } else {
+        hideErrorMsg();
+        url.classList.add('border-green-500');
+      }
     }
   }
 });

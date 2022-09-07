@@ -650,6 +650,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(15 23 42 / var(--tw-border-opacity));
 }
 
+.border-green-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 197 94 / var(--tw-border-opacity));
+}
+
 .bg-indigo-50\/30 {
   background-color: rgb(238 242 255 / 0.3);
 }
